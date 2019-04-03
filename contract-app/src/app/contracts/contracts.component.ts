@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Contract} from "../contract";
 import {ContractService} from "../contract.service";
 
@@ -15,11 +15,15 @@ export class ContractsComponent implements OnInit {
   constructor(private contractService: ContractService) { }
 
   ngOnInit() {
-    this.getContracts();
+    this.refresh();
+    this.subscribeToEvents();
   }
 
-  getContracts(): void {
+  refresh(): void {
     this.contractService.getAllContracts().subscribe(contracts => this.contracts = contracts);
   }
 
+  private subscribeToEvents() {
+    this.contractService.contractAdded.subscribe(value => this.refresh());
+  }
 }
