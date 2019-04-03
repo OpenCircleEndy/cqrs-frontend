@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatInputModule, MatSelectModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatExpansionModule, MatInputModule, MatSelectModule, MatTableModule} from '@angular/material';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -27,6 +27,7 @@ import {ContractsComponent} from './contracts/contracts.component';
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
+    MatExpansionModule,
     FormsModule
   ],
   providers: [],

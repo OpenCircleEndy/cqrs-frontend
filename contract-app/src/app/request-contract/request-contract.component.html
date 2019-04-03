@@ -1,16 +1,22 @@
-<form class="mat-form-field">
-  Request
-  <mat-form-field>
-    <mat-select [(value)]="createContractRequest.type" matNativeControl required>
-      <mat-option value="CUSTOMER">Customer</mat-option>
-      <mat-option value="SUPPLIER">Supplier</mat-option>
-      <mat-option value="OTHER">Other type of</mat-option>
-    </mat-select>
-  </mat-form-field>
-  contract for
-  <mat-form-field>
-    <input [(ngModel)]="createContractRequest.customerName" [ngModelOptions]="{standalone: true}" matInput required/>
-  </mat-form-field>
-  <button (click)="requestContract()" class="mat-button" mat-button>Send</button>
-</form>
-
+<div class="request-contract-form">
+  <div class="request-contract-form-header">Request a new contract</div>
+  <div class="request-contract-form-body">
+    <form class="mat-form-field">
+      <mat-form-field>
+        <mat-label>Type:</mat-label>
+        <mat-select [(value)]="createContractRequest.type" matNativeControl required>
+          <mat-option value="CUSTOMER">Customer</mat-option>
+          <mat-option value="SUPPLIER">Supplier</mat-option>
+          <mat-option value="OTHER">Other type of</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Customer:</mat-label>
+        <input [(ngModel)]="createContractRequest.customerName" [ngModelOptions]="{standalone: true}" matInput/>
+      </mat-form-field>
+      <div>
+        <button (click)="requestContract()" class="mat-raised-button" mat-button>Send</button>
+      </div>
+    </form>
+  </div>
+</div>
