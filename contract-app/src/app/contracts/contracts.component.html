@@ -1,0 +1,18 @@
+<h2>Contracts</h2>
+
+<table mat-table [dataSource]="contracts" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Type of Contract </th>
+    <td mat-cell *matCellDef="let contract"> {{contract.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="customerName">
+    <th mat-header-cell *matHeaderCellDef> Customer </th>
+    <td mat-cell *matCellDef="let contract"> {{contract.customerName}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+
+</table>

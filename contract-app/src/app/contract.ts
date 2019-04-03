@@ -1,4 +1,5 @@
 export interface Contract {
-  code: string;
+  id: string
+  type: string;
   customerName: string;
 }
