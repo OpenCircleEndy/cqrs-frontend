@@ -1,0 +1,22 @@
+<div class="add-lead-form">
+  <div class="add-lead-form-header">Add Lead</div>
+  <div class="add-lead-form-body">
+    <form class="mat-form-field">
+      <mat-form-field>
+        <mat-label>Number:</mat-label>
+        <input [(ngModel)]="createLeadRequest.number" [ngModelOptions]="{standalone: true}" matInput/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Customer id:</mat-label>
+        <input [(ngModel)]="createLeadRequest.customerId" [ngModelOptions]="{standalone: true}" matInput/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Quantity:</mat-label>
+        <input [(ngModel)]="createLeadRequest.quantity" [ngModelOptions]="{standalone: true}" matInput/>
+      </mat-form-field>
+      <div>
+        <button (click)="submit()" class="mat-raised-button" mat-button>Send</button>
+      </div>
+    </form>
+  </div>
+</div>

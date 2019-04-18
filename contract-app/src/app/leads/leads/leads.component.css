@@ -1,0 +1,8 @@
+table {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.leads mat-expansion-panel-header {
+  background-color: rgba(156, 185, 213, 0.24);
+}

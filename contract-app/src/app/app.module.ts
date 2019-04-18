@@ -10,13 +10,16 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {RequestContractComponent} from './request-contract/request-contract.component';
 import {ContractsComponent} from './contracts/contracts.component';
-
+import {LeadsComponent} from './leads/leads/leads.component';
+import {AddLeadComponent} from './leads/add-lead/add-lead.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContractsComponent,
-    RequestContractComponent
+    RequestContractComponent,
+    LeadsComponent,
+    AddLeadComponent
   ],
   imports: [
     BrowserModule,

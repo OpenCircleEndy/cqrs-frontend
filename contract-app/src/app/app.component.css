@@ -10,6 +10,14 @@
   padding: 36px;
 }
 
+app-add-lead {
+  padding-right: 20px;
+}
+
+app-leads {
+  width: 100%;
+}
+
 app-request-contract {
   padding-right: 20px;
 }
