@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Stomp} from "@stomp/stompjs";
-import SockJS from 'sockjs-client';
+import {CompatClient, Stomp} from "@stomp/stompjs";
 import {MatTableDataSource} from "@angular/material";
+
+const URL = "ws://localhost:8080/websocket";
 
 export interface Lead {
   id: number;
@@ -20,7 +21,8 @@ export class LeadsComponent implements OnInit {
   leads: Lead[] = [];
   dataSource = new MatTableDataSource<Lead>();
   columnsToDisplay: string[] = ['number', 'relation', 'quantity'];
-  private ws: any;
+
+  private ws: CompatClient;
 
   constructor() {
   }
@@ -31,9 +33,7 @@ export class LeadsComponent implements OnInit {
 
   connect() {
     //connect to stomp where stomp endpoint is exposed
-    let ws = new SockJS("http://localhost:8080/websocket");
-    // let socket = new WebSocket("ws://localhost:8080/websocket");
-    this.ws = Stomp.over(ws);
+    this.ws = Stomp.over(new WebSocket(URL));
     let that = this;
     this.ws.connect({}, function (frame) {
       that.ws.subscribe("/errors", function (message) {
@@ -53,9 +53,5 @@ export class LeadsComponent implements OnInit {
       this.ws.ws.close();
     }
     console.log("Disconnected");
-  }
-
-  refresh(): void {
-
   }
 }
