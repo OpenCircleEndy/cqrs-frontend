@@ -1,22 +1,29 @@
-<mat-expansion-panel class="leads">
-  <mat-expansion-panel-header>
-    <mat-panel-title>For sales</mat-panel-title>
-    <mat-panel-description>{{leads.length}} leads</mat-panel-description>
-  </mat-expansion-panel-header>
-  <table class="mat-elevation-z1 mat-table" style="width: 100%">
-    <thead>
-    <tr class="matt-header-row">
-      <th class="mat-header-cell">Lead</th>
-      <th class="mat-header-cell">Relation</th>
-      <th class="mat-header-cell">Quantity</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let lead of leads">
-      <td class="mat-cell">{{lead.number}}</td>
-      <td class="mat-cell">{{lead.relationId}}</td>
-      <td class="mat-cell">{{lead.quantity}}</td>
-    </tr>
-    </tbody>
-  </table>
-</mat-expansion-panel>
+<div *ngIf="leads">
+  <mat-expansion-panel class="leads">
+    <mat-expansion-panel-header>
+      <mat-panel-title>For approval</mat-panel-title>
+      <mat-panel-description>{{leads.length}} leads</mat-panel-description>
+    </mat-expansion-panel-header>
+    <table [dataSource]="dataSource" class="mat-elevation-z1" mat-table>
+
+      <ng-container matColumnDef="number">
+        <th *matHeaderCellDef mat-header-cell> Lead</th>
+        <td *matCellDef="let lead" mat-cell> {{lead.number}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="relation">
+        <th *matHeaderCellDef mat-header-cell> Relation</th>
+        <td *matCellDef="let lead" mat-cell> {{lead.relationId}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantity">
+        <th *matHeaderCellDef mat-header-cell> Quantity</th>
+        <td *matCellDef="let lead" mat-cell> {{lead.quantity}} </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="columnsToDisplay" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: columnsToDisplay" mat-row></tr>
+
+    </table>
+  </mat-expansion-panel>
+</div>

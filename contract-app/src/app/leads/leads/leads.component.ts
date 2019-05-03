@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Stomp} from "@stomp/stompjs";
 import SockJS from 'sockjs-client';
+import {MatTableDataSource} from "@angular/material";
 
 export interface Lead {
   id: number;
@@ -17,7 +18,8 @@ export interface Lead {
 export class LeadsComponent implements OnInit {
 
   leads: Lead[] = [];
-  columnsToDisplay: string[] = ['number', 'relationId', 'quantity'];
+  dataSource = new MatTableDataSource<Lead>();
+  columnsToDisplay: string[] = ['number', 'relation', 'quantity'];
   private ws: any;
 
   constructor() {
@@ -38,10 +40,8 @@ export class LeadsComponent implements OnInit {
         alert("Error " + message.body);
       });
       that.ws.subscribe("/topic/leads", function (message) {
-        console.log(message.body);
-        console.log(that.leads);
         that.leads.push(JSON.parse(message.body));
-        console.log(that.leads);
+        that.dataSource = new MatTableDataSource<Lead>(that.leads);
       });
     }, function (error) {
       alert("STOMP error " + error);
@@ -53,5 +53,9 @@ export class LeadsComponent implements OnInit {
       this.ws.ws.close();
     }
     console.log("Disconnected");
+  }
+
+  refresh(): void {
+
   }
 }
