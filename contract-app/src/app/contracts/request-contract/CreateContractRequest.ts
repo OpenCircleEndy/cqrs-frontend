@@ -1,4 +1,4 @@
 export interface CreateContractRequest {
   type: string;
-  customerName: string;
+  leadNumber: string;
 }

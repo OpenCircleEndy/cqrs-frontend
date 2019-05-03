@@ -4,12 +4,19 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatExpansionModule, MatInputModule, MatSelectModule, MatTableModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatExpansionModule,
+  MatInputModule,
+  MatListModule,
+  MatSelectModule,
+  MatTableModule
+} from '@angular/material';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {RequestContractComponent} from './request-contract/request-contract.component';
-import {ContractsComponent} from './contracts/contracts.component';
+import {RequestContractComponent} from './contracts/request-contract/request-contract.component';
+import {ContractsComponent} from './contracts/contracts/contracts.component';
 import {LeadsComponent} from './leads/leads/leads.component';
 import {AddLeadComponent} from './leads/add-lead/add-lead.component';
 
@@ -31,7 +38,8 @@ import {AddLeadComponent} from './leads/add-lead/add-lead.component';
     MatInputModule,
     MatButtonModule,
     MatExpansionModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

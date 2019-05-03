@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ContractService} from "../contract.service";
-import {CreateContractRequest} from "../CreateContractRequest";
+import {CreateContractRequest} from "./CreateContractRequest";
 
 @Component({
   selector: 'app-request-contract',
@@ -24,6 +24,6 @@ export class RequestContractComponent implements OnInit {
   }
 
   private clearForm(): void {
-    this.createContractRequest = {type: null, customerName: null};
+    this.createContractRequest = {type: null, leadNumber: null};
   }
 }

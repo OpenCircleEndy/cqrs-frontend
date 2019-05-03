@@ -1,10 +1,10 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Observable} from "rxjs";
-import {Contract} from "./contract";
+import {Contract} from "./contracts/contract";
 import {catchError, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {of} from "rxjs/internal/observable/of";
-import {CreateContractRequest} from "./CreateContractRequest";
+import {CreateContractRequest} from "./request-contract/CreateContractRequest";
 
 const URL = "http://localhost:8080/contracts";
 
@@ -31,6 +31,10 @@ export class ContractService {
       .pipe(tap(_ => this.contractAdded.emit("toBeId")));
   }
 
+  private static log(message: string) {
+    console.log('inform user about: ' + message);
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
@@ -44,14 +48,10 @@ export class ContractService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      ContractService.log(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-  }
-
-  private log(message: string) {
-    console.log('inform user about: ' + message);
   }
 }

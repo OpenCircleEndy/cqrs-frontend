@@ -5,7 +5,7 @@ import SockJS from 'sockjs-client';
 export interface Lead {
   id: number;
   number: string;
-  customerId: string;
+  relationId: string;
   quantity: number;
 }
 
@@ -17,7 +17,7 @@ export interface Lead {
 export class LeadsComponent implements OnInit {
 
   leads: Lead[] = [];
-  columnsToDisplay: string[] = ['number', 'customerId', 'quantity'];
+  columnsToDisplay: string[] = ['number', 'relationId', 'quantity'];
   private ws: any;
 
   constructor() {

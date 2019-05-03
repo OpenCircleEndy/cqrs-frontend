@@ -7,8 +7,10 @@
         <input [(ngModel)]="createLeadRequest.number" [ngModelOptions]="{standalone: true}" matInput/>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Customer id:</mat-label>
-        <input [(ngModel)]="createLeadRequest.customerId" [ngModelOptions]="{standalone: true}" matInput/>
+        <mat-label>Relation:</mat-label>
+        <mat-select [(value)]="createLeadRequest.relationId">
+          <mat-option *ngFor="let relation of relations" [value]="relation.id">{{relation.name}}</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Quantity:</mat-label>

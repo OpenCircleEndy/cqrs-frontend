@@ -11,9 +11,9 @@
       <td *matCellDef="let contract" mat-cell> {{contract.type}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="customerName">
-      <th *matHeaderCellDef mat-header-cell> Customer</th>
-      <td *matCellDef="let contract" mat-cell> {{contract.customerName}} </td>
+    <ng-container matColumnDef="relationName">
+      <th *matHeaderCellDef mat-header-cell> Relation</th>
+      <td *matCellDef="let contract" mat-cell> {{contract.relationName}} </td>
     </ng-container>
 
     <tr *matHeaderRowDef="columnsToDisplay" mat-header-row></tr>

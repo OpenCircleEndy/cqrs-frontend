@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Contract} from "../contract";
+import {Contract} from "./contract";
 import {ContractService} from "../contract.service";
 
 @Component({
@@ -10,7 +10,7 @@ import {ContractService} from "../contract.service";
 export class ContractsComponent implements OnInit {
 
   contracts: Contract[];
-  columnsToDisplay: string[] = ['type', 'customerName'];
+  columnsToDisplay: string[] = ['type', 'relationName'];
 
   constructor(private contractService: ContractService) { }
 

@@ -7,14 +7,14 @@
     <thead>
     <tr class="matt-header-row">
       <th class="mat-header-cell">Lead</th>
-      <th class="mat-header-cell">Customer</th>
+      <th class="mat-header-cell">Relation</th>
       <th class="mat-header-cell">Quantity</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let lead of leads">
       <td class="mat-cell">{{lead.number}}</td>
-      <td class="mat-cell">{{lead.customerId}}</td>
+      <td class="mat-cell">{{lead.relationId}}</td>
       <td class="mat-cell">{{lead.quantity}}</td>
     </tr>
     </tbody>
