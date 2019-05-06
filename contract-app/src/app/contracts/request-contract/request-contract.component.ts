@@ -9,7 +9,7 @@ import {CreateContractRequest} from "./CreateContractRequest";
 })
 export class RequestContractComponent implements OnInit {
 
-  private createContractRequest: CreateContractRequest;
+  createContractRequest: CreateContractRequest;
 
   constructor(private contractService: ContractService) {
   }

@@ -19,6 +19,8 @@ import {RequestContractComponent} from './contracts/request-contract/request-con
 import {ContractsComponent} from './contracts/contracts/contracts.component';
 import {LeadsComponent} from './leads/leads/leads.component';
 import {AddLeadComponent} from './leads/add-lead/add-lead.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {AddLeadComponent} from './leads/add-lead/add-lead.component';
     MatButtonModule,
     MatExpansionModule,
     FormsModule,
-    MatListModule
+    MatListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

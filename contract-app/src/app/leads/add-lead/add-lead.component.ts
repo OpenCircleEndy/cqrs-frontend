@@ -19,8 +19,8 @@ const HTTP_OPTIONS = {
 })
 export class AddLeadComponent implements OnInit {
 
-  private createLeadRequest: Lead;
-  private relations: Relation[];
+  createLeadRequest: Lead;
+  relations: Relation[];
 
   constructor(private http: HttpClient, private relationService: RelationService) {
   }
