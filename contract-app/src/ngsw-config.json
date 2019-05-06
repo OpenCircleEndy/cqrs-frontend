@@ -23,5 +23,19 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "relations",
+      "urls": [
+        "/relations"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 1,
+        "maxAge": "1h",
+        "timeout": "4s"
+      }
+    }
   ]
 }
