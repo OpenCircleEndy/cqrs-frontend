@@ -14,3 +14,10 @@ This is a task-driven UI which allows you to request the creation of a lead send
 The Angular components which query the server are updated independent of the Anguler components which send Commands.
 ## Bonus: Websockets
 Could not help myself adding a websocket for updated the leads. The contracts are updated using an Angular Event Emitter. Open two windows and notice the difference in behavior between adding leads and requesting contracts. 
+## Bonus: Service Worker
+Cache Angular Static resources and Customer Application data (in the Lead Customer Select box):
+
+`ng build --prod`
+
+`http-server -p 8090 -c-1 dist/contract-app/`
+
